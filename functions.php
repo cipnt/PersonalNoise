@@ -38,7 +38,7 @@ function personalnoise_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -63,8 +63,8 @@ function personalnoise_setup() {
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'personalnoise_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
+		'default-color' => '323232',
+        'default-image' => get_template_directory_uri() . '/images/broken_noise.png',
 	) ) );
 }
 endif; // personalnoise_setup
@@ -128,3 +128,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom Theme Options.
+ */
+require get_template_directory() . '/inc/theme-options/theme-options.php';
