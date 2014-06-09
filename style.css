@@ -81,7 +81,15 @@ html {
 	box-sizing:         border-box;
 }
 body {
-	background: #fff;
+	background:#323232 url(images/broken_noise.png); 
+	/* This pattern is downloaded from http://subtlepatterns.com/broken-noise/
+ 	If you need more, that's where to get'em. */
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+	body { 
+		background:#323232 url(images/broken_noise_@2X.png); 
+		background-size: 476px 476px;
+	}
 }
 article,
 aside,
@@ -202,6 +210,120 @@ big {
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
+
+#wrapper { 
+	position: relative;
+	max-width:1300px; 
+	min-width: 320px;
+	margin-left: auto; 
+	margin-right: auto; 
+	/*overflow: hidden;*/
+}
+#syndicate { 
+	margin: 0 6px; 
+	text-align: right;
+	list-style: none;
+	height: 75px;
+	overflow: hidden;
+}
+#syndicate li { 
+    display: inline-block;
+    vertical-align:text-top;
+	width:40px; 
+	height:40px; 
+	margin: 30px 6px 0 0;
+	border: 3px solid #ffffff;
+	background-color:#ffffff;
+	background-size: 34px;
+	background-repeat: no-repeat;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	-moz-box-shadow: 0px 0px 15px #000;
+	-webkit-box-shadow: 0px 0px 15px #000;
+	box-shadow: 0px 0px 15px #000;
+	-moz-transition: 0.3s; 
+	-webkit-transition: 0.3s; 
+	-o-transition: 0.3s;
+	transition: 0.3s; 
+	text-indent: 100%;
+	overflow: hidden;
+}
+#syndicate li:hover { 
+	margin-top: 20px;
+}
+#syndicate .rss { 			background-position-y:   0px; background-image: url(images/syndication.png); }
+#syndicate .facebook { 		background-position-y: -34px; background-image: url(images/syndication.png); }
+#syndicate .twitter { 		background-position-y: -68px; background-image: url(images/syndication.png); }
+#syndicate .googleplus { 	background-position-y:-102px; background-image: url(images/syndication.png); }
+#syndicate .linkedin { 		background-position-y:-136px; background-image: url(images/syndication.png); }
+#syndicate .vimeo { 		background-position-y:-170px; background-image: url(images/syndication.png); }
+#syndicate .youtube { 		background-position-y:-204px; background-image: url(images/syndication.png); }
+#syndicate .flickr { 		background-position-y:-238px; background-image: url(images/syndication.png); }
+
+#page { 
+	position: relative;
+	min-height: 720px; /* for home page image*/
+	margin-left: 6px; 
+	margin-right: 6px; 
+	margin-top: -17px; 
+	background: #eeeeee; /* fallback */
+	background: rgba(255,255,255,0.96);
+	background-image: url(images/gradient-top.png), url(images/gradient-bottom.png); 
+	background-position: top left, bottom right;
+	background-repeat: no-repeat, no-repeat;
+	-moz-box-shadow: 0px 0px 15px #000;
+	-webkit-box-shadow: 0px 0px 15px #000;
+	box-shadow: 0px 0px 15px #000;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 4px solid #ffffff;
+}
+.site-branding {
+	float: left;
+	max-width: 300px;
+	min-height: 70px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	background-image: url(images/logo.png); 
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.search-header {
+	float: right;
+	max-width: 300px;
+	min-height: 70px;
+}
+@media screen and (max-width: 600px) {
+	.search-header { 
+		display: none;
+	}
+}
+#cover { 
+	width:100%; 
+	height:250px; 
+	overflow: hidden; 
+}
+#cover_outer { 
+	position: relative; 
+	top: 50%; 
+	left: 50%; 
+	float: left; 
+}
+#cover_inner { 
+	position: relative; 
+	-webkit-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+	left: -50%; 
+	float: left; 
+}
+#cover_inner img {
+	max-width:none;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
