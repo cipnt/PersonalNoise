@@ -12,13 +12,18 @@
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'personalnoise' ) ); ?>"><?php printf( __( 'Powered by %s', 'personalnoise' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'personalnoise' ), 'Personal Noise', '<a href="http://ciprian.cucuruz.ro/" rel="designer">Ciprin Cucuruz</a>' ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 </div><!-- #wrapper -->
+
+<div id="subfooter">
+	<span><?php printf( __( 'Powered by %s', 'personalnoise' ), '<a href="' . esc_url( __( 'http://wordpress.org/', 'personalnoise' ) ) . '">WordPress</a>' ); ?></span>
+				<span class="sep"> | </span><wbr>
+				<span><?php printf( __( 'Theme: %1$s', 'personalnoise' ), '<a href="http://ciprian.cucuruz.ro/personalnoise" rel="designer">Personal Noise</a>' ); ?></span>
+</div>
+
 <?php wp_footer(); ?>
 
 </body>

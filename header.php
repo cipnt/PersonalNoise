@@ -20,6 +20,8 @@
 
 <body <?php body_class(); ?>>
 
+<div id="topline"></div>
+
 <div id="wrapper">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'personalnoise' ); ?></a>
 
