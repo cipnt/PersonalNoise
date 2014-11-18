@@ -21,8 +21,22 @@
 <div id="subfooter">
 	<span><?php printf( __( 'Powered by %s', 'personalnoise' ), '<a href="' . esc_url( __( 'http://wordpress.org/', 'personalnoise' ) ) . '">WordPress</a>' ); ?></span>
 				<span class="sep"> | </span><wbr>
-				<span><?php printf( __( 'Theme: %1$s', 'personalnoise' ), '<a href="http://ciprian.cucuruz.ro/personalnoise" rel="designer">Personal Noise</a>' ); ?></span>
+				<span><?php printf( __( 'Theme: %1$s', 'personalnoise' ), '<a href="http://ciprian.cucuruz.uk/personalnoise" rel="designer">Personal Noise</a>' ); ?></span>
 </div>
+
+<?php
+	$options = personalnoise_get_theme_options();
+	if ( ''!= $options['ganalytics'] ) : ?>
+<script><!-- Google Analytics -->
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '<?php echo esc_attr( $options['ganalytics'] ); ?>', 'auto');
+  ga('send', 'pageview');
+</script>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 

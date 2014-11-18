@@ -40,6 +40,7 @@ function personalnoise_theme_options_init() {
 	);
 
 	// Register our individual settings fields
+	add_settings_field( 'ganalytics', __( 'Google Analytics', 'personalnoise' ), 'personalnoise_ganalytics_text_input', 'theme_options', 'general' );
 	add_settings_field(
 		'show_rss_link', // Unique identifier for the field for this section
 		__( 'RSS Link', 'personalnoise' ), // Setting field label
@@ -100,6 +101,7 @@ add_action( 'admin_menu', 'personalnoise_theme_options_add_page' );
  */
 function personalnoise_get_default_theme_options() {
 	$default_theme_options = array(
+		'ganalytics'	=> '',
 		'show_rss_link'	=> 'off',
 		'twitter_url'	=> 'http://www.twitter.com/',
 		'facebook_url'	=> 'http://www.facebook.com/',
@@ -138,6 +140,15 @@ function personalnoise_settings_field_checkbox() {
 /**
  * Renders the input setting fields.
  */
+function personalnoise_ganalytics_text_input() {
+	$options = personalnoise_get_theme_options();
+	?>
+	<div>
+		<input type="text" name="personalnoise_theme_options[ganalytics]" id="ganalytics" value="<?php echo esc_attr( $options['ganalytics'] ); ?>" />
+		<label class="description" for="ganalytics"><?php _e( 'Enter your Google Analytics tracking ID', 'personalnoise' ); ?></label>
+	</div>
+	<?php
+}
 function personalnoise_twitter_text_input() {
 	$options = personalnoise_get_theme_options();
 	?>
@@ -247,6 +258,9 @@ function personalnoise_theme_options_validate( $input ) {
 		$output['show_rss_link'] = ( $input['show_rss_link'] == 'on' ? 'on' : 'off' );
 
 	// The text input must be safe text with no HTML tags and encode the URL
+	if ( isset( $input['ganalytics'] ) ) :
+		$output['ganalytics'] = esc_attr( $input['ganalytics'] );
+	endif;
 	if ( isset( $input['twitter_url'] ) ) :
 		$output['twitter_url'] = esc_url_raw( $input['twitter_url'] );
 	endif;
