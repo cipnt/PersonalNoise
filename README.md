@@ -1,9 +1,9 @@
 Personal Noise WP Theme
 ===
 Theme Name: Personal Noise
-Theme URI: http://ciprian.cucuruz.ro/personal-noise
+Theme URI: https://ciprian.uk/personal-noise
 Author: Ciprian Cucuruz
-Author URI: http://ciprian.cucuruz.ro/
+Author URI: https://ciprian.uk/
 Version: 1.0
 
 This is a WordPress theme I created for my personal website in order to get myself used to adhere to WP best practices and also to become familiarised with the GitHub workflow in production.
