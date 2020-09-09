@@ -1,7 +1,7 @@
 Personal Noise WP Theme
 ===
 Theme Name: Personal Noise
-Theme URI: https://ciprian.uk/personal-noise
+Theme URI: https://ciprian.uk/personalnoise
 Author: Ciprian Cucuruz
 Author URI: https://ciprian.uk/
 Version: 1.0
